@@ -1,5 +1,6 @@
 import { HomeGrid } from "@/components/Home/HomeGrid";
 import { Layout } from "@/components/Layout/Layout";
+import { Typography } from "@mui/material";
 import Head from "next/head";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <Layout>
         <HomeGrid />
+        <Typography>Made with Love ❤️ © 4d616e616e</Typography>
       </Layout>
     </>
   );

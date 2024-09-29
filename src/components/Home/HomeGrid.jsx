@@ -66,7 +66,9 @@ export const HomeGrid = () => {
             <Explore /> Feed
           </Typography>
           {Array.from(Array(6)).map((item, key) => (
-            <NgoCard key={key} color={colors[key]} />
+            <div key={item}>
+              <NgoCard color={colors[key]} />
+            </div>
           ))}
         </Grid2>
         <Grid2
@@ -74,7 +76,7 @@ export const HomeGrid = () => {
           size={{ xs: 12, md: 2.5 }}
           sx={{
             px: 2,
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             flexDirection: "column",
             gap: 2,
             position: "sticky",
