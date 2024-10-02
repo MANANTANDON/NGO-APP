@@ -1,9 +1,10 @@
 import { Add } from "@mui/icons-material";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 export const NgoCard = ({ color }) => {
+  const [show, setShow] = useState(false);
   const text = `Prosperity for Humanity, as defined for an NGO, embodies a holistic vision of well-being that integrates economic, social, and
             environmental dimensions. It seeks to create conditions where
             individuals and communities thrive through access to fair wages,
@@ -16,7 +17,15 @@ export const NgoCard = ({ color }) => {
             benefits everyone and enhances overall quality of life.`;
   return (
     <>
-      <Box sx={{ bgcolor: "#fff", p: 1, borderRadius: "20px" }}>
+      <Box
+        sx={{
+          bgcolor: "#fff",
+          p: 1,
+          borderRadius: "20px",
+          position: "relative",
+          height: "450px",
+        }}
+      >
         <Box
           sx={{
             position: "relative",
@@ -62,7 +71,6 @@ export const NgoCard = ({ color }) => {
             justifyContent: "space-between",
             alignItems: "center",
             mt: 3,
-            mb: 1,
           }}
         >
           <Button
@@ -84,14 +92,28 @@ export const NgoCard = ({ color }) => {
               alignItems: "center",
               borderRadius: "50%",
               p: 0.2,
+              zIndex: 100,
               "&:hover": {
                 cursor: "pointer",
               },
             }}
+            onClick={() => setShow(!show)}
           >
             <Add />
           </Box>
         </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            height: "450px",
+            width: "100%",
+            bgcolor: color,
+            borderRadius: "20px",
+            top: 0,
+            left: 0,
+            display: !show && "none",
+          }}
+        ></Box>
       </Box>
     </>
   );
