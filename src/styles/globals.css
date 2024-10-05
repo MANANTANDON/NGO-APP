@@ -6,6 +6,56 @@ body {
   background-color: var(--background-color);
 }
 
+.colorBoxFadeIn {
+  animation: fadeIn ease-in 0.5s forwards;
+}
+.colorBoxFadeOut {
+  animation: fadeOut ease-out 0.5s forwards;
+}
+
+.crossCircleRotate {
+  animation: circleRotate ease-in 0.5s forwards;
+}
+
+.crossCircle {
+  animation: circleRotateZero ease-out 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes circleRotateZero {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

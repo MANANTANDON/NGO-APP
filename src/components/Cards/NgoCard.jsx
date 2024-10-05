@@ -15,6 +15,10 @@ export const NgoCard = ({ color }) => {
             By addressing these interconnected areas, an NGO can work towards a
             more equitable and sustainable future, ensuring that progress
             benefits everyone and enhances overall quality of life.`;
+
+  const handleShow = () => {
+    setShow(!show);
+  };
   return (
     <>
       <Box
@@ -23,7 +27,7 @@ export const NgoCard = ({ color }) => {
           p: 1,
           borderRadius: "20px",
           position: "relative",
-          height: "450px",
+          height: "440px",
         }}
       >
         <Box
@@ -56,7 +60,7 @@ export const NgoCard = ({ color }) => {
               overflow: "hidden",
               textOverflow: "ellipsis",
               display: "-webkit-box",
-              WebkitLineClamp: "4",
+              WebkitLineClamp: "3",
               WebkitBoxOrient: "vertical",
             }}
             fontSize="14px"
@@ -97,7 +101,8 @@ export const NgoCard = ({ color }) => {
                 cursor: "pointer",
               },
             }}
-            onClick={() => setShow(!show)}
+            className={show ? "crossCircleRotate" : "crossCircle"}
+            onClick={handleShow}
           >
             <Add />
           </Box>
@@ -112,7 +117,9 @@ export const NgoCard = ({ color }) => {
             top: 0,
             left: 0,
             display: !show && "none",
+            opacity: show ? 1 : 0,
           }}
+          className={show ? "colorBoxFadeIn" : "colorBoxFadeOut"}
         ></Box>
       </Box>
     </>
