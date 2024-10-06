@@ -32,16 +32,23 @@ export const NgoCard = ({ color }) => {
         sx={{
           my: 1,
           borderRadius: "20px",
-          height: "435px",
           position: "relative",
         }}
+        variant="outlined"
       >
         <CardMedia
           sx={{ height: 200 }}
           image="/images/ngo.png"
           title="NGO IMAGE"
         />
-        <CardContent>
+        <CardContent
+          sx={{
+            padding: 0,
+            "&: last-child": {
+              padding: 0,
+            },
+          }}
+        >
           <Box sx={{ my: 1, px: 2 }}>
             <Typography fontSize="12px" fontWeight="700" sx={{ color: color }}>
               Community Development
@@ -67,10 +74,11 @@ export const NgoCard = ({ color }) => {
           <Box
             sx={{
               px: 2,
+              py: 1.5,
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              mt: 3,
+              mt: 2.2,
             }}
           >
             <Button
@@ -106,7 +114,7 @@ export const NgoCard = ({ color }) => {
           <Box
             sx={{
               position: "absolute",
-              height: "435px",
+              height: "100%",
               width: "100%",
               bgcolor: color,
               borderRadius: "20px",
