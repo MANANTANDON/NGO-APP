@@ -1,0 +1,90 @@
+.ngoc1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.ngoc2 {
+  height: 200px;
+}
+
+.ngoc3 {
+  padding: 0px;
+}
+
+.ngoc3:last-child {
+  padding: 0px;
+}
+
+.ngoc4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.ngoc5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.ngoc6 {
+  background-color: rgb(19, 32, 48);
+  color: #fff;
+  border-radius: 10px;
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.ngoc7 {
+  background-color: rgb(19, 32, 48);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  transform: rotate(0deg);
+}
+
+.ngoc7:hover {
+  cursor: pointer;
+}
+
+.ngoc8 {
+  animation: circleRotate ease-in 0.5s forwards;
+}
+
+.ngoc9 {
+  animation: circleRotateZero ease-out 0.5s forwards;
+}
+
+.ngoc10 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+}
+@keyframes circleRotateZero {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
