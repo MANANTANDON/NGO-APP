@@ -6,13 +6,6 @@ body {
   background-color: var(--background-color);
 }
 
-.colorBoxFadeIn {
-  animation: fadeIn ease-in 0.5s forwards;
-}
-.colorBoxFadeOut {
-  animation: fadeOut ease-out 0.5s forwards;
-}
-
 .crossCircleRotate {
   animation: circleRotate ease-in 0.5s forwards;
 }
@@ -21,22 +14,17 @@ body {
   animation: circleRotateZero ease-out 0.5s forwards;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.fade-box {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 @keyframes circleRotateZero {

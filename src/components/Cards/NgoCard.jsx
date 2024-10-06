@@ -1,5 +1,12 @@
 import { Add } from "@mui/icons-material";
-import { Box, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -21,107 +28,95 @@ export const NgoCard = ({ color }) => {
   };
   return (
     <>
-      <Box
+      <Card
         sx={{
-          bgcolor: "#fff",
-          p: 1,
+          my: 1,
           borderRadius: "20px",
+          height: "435px",
           position: "relative",
-          height: "440px",
         }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            overflow: "hidden",
-            height: "200px",
-            width: "100%",
-            borderRadius: "12px",
-          }}
-        >
-          <Image
-            src="/images/ngo.png"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-          />
-        </Box>
-        <Box sx={{ my: 1, px: 2 }}>
-          <Typography fontSize="12px" fontWeight="700" sx={{ color: color }}>
-            Community Development
-          </Typography>
-        </Box>
-        <Box sx={{ px: 2 }}>
-          <Typography fontSize="25px" fontWeight="bold" sx={{ my: 1 }}>
-            Prosperity For Humanity
-          </Typography>
-          <Typography
-            sx={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              display: "-webkit-box",
-              WebkitLineClamp: "3",
-              WebkitBoxOrient: "vertical",
-            }}
-            fontSize="14px"
-          >
-            {text}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            px: 2,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            mt: 3,
-          }}
-        >
-          <Button
-            sx={{
-              bgcolor: "rgb(19,32,48)",
-              color: "#fff",
-              borderRadius: "10px",
-              px: 4,
-            }}
-          >
-            Know More
-          </Button>
+        <CardMedia
+          sx={{ height: 200 }}
+          image="/images/ngo.png"
+          title="NGO IMAGE"
+        />
+        <CardContent>
+          <Box sx={{ my: 1, px: 2 }}>
+            <Typography fontSize="12px" fontWeight="700" sx={{ color: color }}>
+              Community Development
+            </Typography>
+          </Box>
+          <Box sx={{ px: 2 }}>
+            <Typography fontSize="25px" fontWeight="bold" sx={{ my: 1 }}>
+              Prosperity For Humanity
+            </Typography>
+            <Typography
+              sx={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "-webkit-box",
+                WebkitLineClamp: "3",
+                WebkitBoxOrient: "vertical",
+              }}
+              fontSize="14px"
+            >
+              {text}
+            </Typography>
+          </Box>
           <Box
             sx={{
-              bgcolor: "rgb(19,32,48)",
-              color: "#fff",
+              px: 2,
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
               alignItems: "center",
-              borderRadius: "50%",
-              p: 0.2,
-              zIndex: 100,
-              "&:hover": {
-                cursor: "pointer",
-              },
+              mt: 3,
             }}
-            className={show ? "crossCircleRotate" : "crossCircle"}
-            onClick={handleShow}
           >
-            <Add />
+            <Button
+              sx={{
+                bgcolor: "rgb(19,32,48)",
+                color: "#fff",
+                borderRadius: "10px",
+                px: 4,
+              }}
+            >
+              Know More
+            </Button>
+            <Box
+              sx={{
+                bgcolor: "rgb(19,32,48)",
+                color: "#fff",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "50%",
+                p: 0.2,
+                zIndex: 100,
+                "&:hover": {
+                  cursor: "pointer",
+                },
+              }}
+              className={show ? "crossCircleRotate" : "crossCircle"}
+              onClick={handleShow}
+            >
+              <Add />
+            </Box>
           </Box>
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            height: "450px",
-            width: "100%",
-            bgcolor: color,
-            borderRadius: "20px",
-            top: 0,
-            left: 0,
-            display: !show && "none",
-            opacity: show ? 1 : 0,
-          }}
-          className={show ? "colorBoxFadeIn" : "colorBoxFadeOut"}
-        ></Box>
-      </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              height: "435px",
+              width: "100%",
+              bgcolor: color,
+              borderRadius: "20px",
+              top: 0,
+              left: 0,
+            }}
+            className={`fade-box ${show ? "fade-in" : "fade-out"}`}
+          ></Box>
+        </CardContent>
+      </Card>
     </>
   );
 };
