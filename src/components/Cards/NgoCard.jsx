@@ -10,8 +10,6 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-import NgoCardStyles from "@/styles/NgoCards.module.css";
-
 export const NgoCard = ({ color }) => {
   const [show, setShow] = useState(false);
 
@@ -20,33 +18,85 @@ export const NgoCard = ({ color }) => {
   };
   return (
     <>
-      <Card className={NgoCardStyles.ngoc1} variant="outlined">
+      <Card
+        sx={{
+          my: 1,
+          borderRadius: "20px",
+          position: "relative",
+          mx: { xs: -1, md: 0 },
+        }}
+        variant="outlined"
+      >
         <CardMedia
-          className={NgoCardStyles.ngoc2}
+          sx={{ height: 250 }}
           image="/images/ngo.png"
           title="NGO IMAGE"
         />
-        <CardContent className={NgoCardStyles.ngoc3}>
-          <Box sx={{ my: 1 }} px={2}>
+        <CardContent
+          sx={{
+            padding: 0,
+            "&: last-child": {
+              padding: 0,
+            },
+          }}
+        >
+          <Box sx={{ my: 1, px: 2 }}>
             <Typography fontSize="12px" fontWeight="700" sx={{ color: color }}>
               Community Development
             </Typography>
           </Box>
-          <Box px={2}>
+          <Box sx={{ px: 2 }}>
             <Typography fontSize="25px" fontWeight="bold" sx={{ my: 1 }}>
               Prosperity For Humanity
             </Typography>
-            <Typography className={NgoCardStyles.ngoc4} fontSize="14px">
+            <Typography
+              sx={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "-webkit-box",
+                WebkitLineClamp: "3",
+                WebkitBoxOrient: "vertical",
+              }}
+              fontSize="14px"
+            >
               {text}
             </Typography>
           </Box>
-          <Box className={NgoCardStyles.ngoc5} px={2} py={1.5}>
-            <Button className={NgoCardStyles.ngoc6}>Know More</Button>
+          <Box
+            sx={{
+              px: 2,
+              py: 1.5,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              mt: 2.2,
+            }}
+          >
+            <Button
+              sx={{
+                bgcolor: "rgb(19,32,48)",
+                color: "#fff",
+                borderRadius: "10px",
+                px: 4,
+              }}
+            >
+              Know More
+            </Button>
             <Box
-              p={0.2}
-              className={`${NgoCardStyles.ngoc7} ${
-                show ? NgoCardStyles.ngoc8 : NgoCardStyles.ngoc9
-              }`}
+              sx={{
+                bgcolor: "rgb(19,32,48)",
+                color: "#fff",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "50%",
+                p: 0.2,
+                zIndex: 1,
+                "&:hover": {
+                  cursor: "pointer",
+                },
+              }}
+              className={show ? "crossCircleRotate" : "crossCircle"}
               onClick={handleShow}
             >
               <Add />
@@ -54,12 +104,21 @@ export const NgoCard = ({ color }) => {
           </Box>
           <Box
             sx={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
               bgcolor: color,
+              borderRadius: "20px",
+              top: 0,
+              left: 0,
             }}
-            className={`${NgoCardStyles.ngoc10} fade-box ${
-              show ? "fade-in" : "fade-out"
-            }`}
-          ></Box>
+            className={`fade-box ${show ? "fade-in" : "fade-out"}`}
+          >
+            <Typography sx={{ color: "#fff", p: 4 }}>
+              Chicky Check Microphone Check 1, Microphone Check 2, Microphone
+              Check 3.... DRE DAY.... You can check sounds from NATE DOGG
+            </Typography>
+          </Box>
         </CardContent>
       </Card>
     </>

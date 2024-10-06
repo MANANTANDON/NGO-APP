@@ -24,7 +24,7 @@ export const HomeGrid = () => {
             display: { xs: "none", md: "block" },
             position: "sticky",
             top: 81, // Adjust based on your layout
-            height: "85vh",
+            height: "100%",
             overflowY: "auto",
           }}
         >
@@ -32,7 +32,7 @@ export const HomeGrid = () => {
             sx={{
               p: 2,
               bgcolor: "white",
-              height: "100%",
+              height: "80vh",
               borderRadius: "20px",
             }}
           >
@@ -52,6 +52,7 @@ export const HomeGrid = () => {
             </Typography>
           </Box>
         </Grid2>
+        {/* Center Grid */}
         <Grid2
           item
           size={{ xs: 12, md: 7 }}
@@ -71,6 +72,7 @@ export const HomeGrid = () => {
             </div>
           ))}
         </Grid2>
+        {/* RIght Grid */}
         <Grid2
           item
           size={{ xs: 12, md: 2.5 }}
@@ -81,11 +83,13 @@ export const HomeGrid = () => {
             gap: 2,
             position: "sticky",
             top: 81, // Adjust based on your layout
-            height: "85vh",
+            height: "100%",
             overflowY: "auto",
           }}
         >
-          <Box sx={{ p: 2, bgcolor: "#fff", height: "100%" }}>
+          <Box
+            sx={{ p: 2, bgcolor: "#fff", height: "80vh", borderRadius: "20px" }}
+          >
             <Typography>More NGOs</Typography>
           </Box>
         </Grid2>
