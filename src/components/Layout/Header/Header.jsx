@@ -10,6 +10,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 export const Header = () => {
@@ -19,7 +20,31 @@ export const Header = () => {
       <Container maxWidth="xl">
         <Box sx={{ mx: { xs: -1, md: -1 }, py: 1.1 }}>
           <Grid2 container>
-            <Grid2 item size={{ xs: 6, md: 3 }} sx={{ margin: "auto" }}>
+            <Grid2
+              item
+              size={{ xs: 6, md: 3 }}
+              sx={{
+                margin: "auto",
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+              }}
+            >
+              <Box
+                sx={{
+                  position: "relative",
+                  overflow: "hidden",
+                  height: "40px",
+                  width: "40px",
+                }}
+              >
+                <Image
+                  src="/images/logo.png"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </Box>
               <Typography>NGO APP</Typography>
             </Grid2>
             <Grid2
